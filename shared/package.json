@@ -1,14 +1,33 @@
 {
-  "name": "shared",
+  "name": "@uniswim/shared",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf dist && tsc -p tsconfig.build.json"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "3.4.3"
+    "typescript": "3.4.3",
+    "@types/dotenv": "4.0.3",
+    "@types/hapi__joi": "15.0.4",
+    "rimraf": "2.6.3",
+    "@nestjs/common": "^6.0.0",
+    "@nestjs/core": "^6.0.0",
+    "rxjs": "^6.0.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^6.0.0",
+    "@nestjs/core": "^6.0.0",
+    "rxjs": "^6.0.0"
+  },
+  "dependencies": {
+    "typeorm": "0.2.18",
+    "dotenv": "8.1.0",
+    "@hapi/joi": "16.1.1"
   }
 }
