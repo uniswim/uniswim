@@ -8,9 +8,8 @@ import { ClientNats } from "@nestjs/microservices"
     console.log("Connected");
 
     client.send(
-        { service: "auth", cmd: "sign" }, { payload: { id:1 } }
+        { service: "user", cmd: "getById" }, { payload: 1 }
     ).toPromise()
     .then(rep => console.log(rep))
-    .catch(err => console.log(err));
-    
+    .catch(err => console.log(err))
 })()
