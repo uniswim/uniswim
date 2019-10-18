@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "typeface-roboto";
+import ThemeModule from 'modules/Theme/Theme.module';
+import ApolloGraphQLModule from 'modules/ApolloGraphQL/ApolloGraphQL.module';
+import DashboardModule from 'modules/Dashboard/Dashboard.module';
+import { Router } from '@reach/router';
+import LayoutModule from 'modules/Layouts/Layout.module';
+import InscriptionExpressModule from 'modules/InscriptionExpress/InscriptionExpress.module';
+
+
+class App extends React.PureComponent{
+  render(){
+    return (
+        <ApolloGraphQLModule>
+          <ThemeModule>
+            <LayoutModule>
+              <Router>
+                <DashboardModule path="/accueil/*" />
+                <InscriptionExpressModule path="/inscriptionexpress/*" />
+              </Router>
+            </LayoutModule>
+          </ThemeModule>
+        </ApolloGraphQLModule>
+    )
+  }
 }
+
 
 export default App;
